@@ -1,2 +1,2 @@
-Creating a new branch is quick and simple.
-change
+Git is a free software is quick and simple.
+fix bug
