@@ -1,2 +1,3 @@
 Git is a free software is quick and simple.
-chongtu
+conflict test
+
