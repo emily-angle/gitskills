@@ -1,9 +1,12 @@
 /README.md
 node_modules/
 .cache/
-node_modules
+/node_modules
 .cache
 .idea
 package-lock.json
 .dist
 .dist/
+/.idea
+/dist
+/.cache
