@@ -1,0 +1,27 @@
+{
+  "name": "gitskills",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build --public-url . index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emily-angle/gitskills.git"
+  },
+  "author": "Robin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emily-angle/gitskills/issues"
+  },
+  "homepage": "https://github.com/emily-angle/gitskills#readme",
+  "dependencies": {
+    "ol": "^6.0.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
