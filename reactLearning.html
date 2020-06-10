@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-CKEditor</title>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+</head>
+<body>
+<div id="app">
+   <div id="editor"></div>
+    <button @click="getData">dianji </button>
+</div>
+<script>
+    const app = new Vue( {
+        el: '#app',
+        data: {
+            editor:null
+        },
+        mounted() {
+            ClassicEditor
+                .create( document.querySelector( '#editor' ), {
+                    // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+                } )
+                .then( editor => {
+                    this.editor = editor;
+                } )
+                .catch( err => {
+                    console.error( err.stack );
+                } );
+        },
+        methods:{
+            getData(){
+             console.log(this.editor.getData())
+            }
+        }
+    } );
+</script>
+</body>
+</html>

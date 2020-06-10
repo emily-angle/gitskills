@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+<div id="app">
+    <input-number v-model="value" :max="10" :min="1"></input-number>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script>
+
+    //组件
+    Vue.component('input-number', {
+        template: '<div class="input-number">' +
+            '<input type="text" :value="currentValue" @change="handleChange" />' +
+            '<button @click="plus">+</button>' +
+            '<button @click="minus">-</button>' +
+            '</div>',
+        props: {
+            value: {
+                type: Number,
+                default: 0
+            },
+            max: {
+                type: Number,
+                default: Infinity
+            },
+            min: {
+                type: Number,
+                default: -Infinity
+            }
+        },
+        watch: {
+            currentValue(val) {
+                this.$emit('input', val)
+                this.$emit('on-change', val)
+            },
+            value(val) {
+                console.log(val)
+            }
+        },
+        data() {
+            var val = this.value
+            if (val > this.max) val = this.max
+            if (val < this.min) val = this.min
+
+            return {
+                currentValue: val
+            }
+        },
+        methods: {
+            plus() {
+                if (this.currentValue >= this.max) {
+                    return
+                }
+                this.currentValue++
+            },
+            minus() {
+                if (this.currentValue <= this.min) {
+                    return
+                }
+                this.currentValue--
+            },
+            handleChange(event) {
+                var val =  this.currentValue
+                var max = this.max
+                var min = this.min
+                if (val > max) {
+                    val = max
+                }
+                if (val < min) {
+                    val = min
+                }
+                this.currentValue = val
+            }
+
+        }
+    })
+    var app = new Vue({
+        el: "#app",
+        data: {
+            value: 1
+        },
+        mounted() {
+
+        },
+        methods: {}
+    })
+
+</script>
+</body>
+</html>

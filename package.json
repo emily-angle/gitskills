@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
+    "start": "parcel reactLearning.html",
     "build": "parcel build --public-url . index.html"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/emily-angle/gitskills#readme",
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^16.0.0",
     "ol": "^6.0.1"
   },
   "devDependencies": {

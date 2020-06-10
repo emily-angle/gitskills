@@ -12,7 +12,32 @@
 </head>
 <body>
 <div id="map" class="map">
+    123
 </div>
-<script src="./index.js"></script>
+<script>
+
+
+    // 兼容低版本的hashchange
+
+    function getUUID() {
+        return Math.floor(Math.random() * 1000000)
+    }
+
+    window.onload = function () {
+        const el = document.getElementById('map')
+        el.onclick = (e) => {
+            e.preventDefault()
+            const uuid = getUUID()
+            location.hash = '#' + uuid
+        }
+        window.onhashchange = (e) => {
+            console.log('oldURL:', e.oldURL)
+            console.log('newURL:', e.newURL)
+        }
+    }
+
+
+</script>
+<!--<script src="./index.js"></script>-->
 </body>
 </html>
